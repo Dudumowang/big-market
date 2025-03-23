@@ -56,7 +56,7 @@ public class StrategyRepository implements IStrategyRepository {
     }
 
     @Override
-    public void storeStoreStrategyAwardSearchRateTables(Long strategyId, BigDecimal rateRange, HashMap<Integer, Integer> shuffleStrategyAwardSearchRateTables) {
+    public void storeStoreStrategyAwardSearchRateTables(Long strategyId, Integer rateRange, HashMap<Integer, Integer> shuffleStrategyAwardSearchRateTables) {
         //1. 存储范围值
         redisService.setValue(Constants.RedisKey.STRATEGY_RATE_RANGE_KEY + strategyId,rateRange.intValue());
 
