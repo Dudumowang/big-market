@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.web.WebProperties;
  */
 
 public interface IStrategyArmory {
-    void assembleLotteryStrategy(Long strategyId);
+    boolean assembleLotteryStrategy(Long strategyId);
 
-    Integer getRandomAwardId(Long strategyId);
+
 }
