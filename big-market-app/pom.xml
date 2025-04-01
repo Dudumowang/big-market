@@ -92,6 +92,11 @@
             <groupId>cn.bugstack</groupId>
             <artifactId>big-market-infrastructure</artifactId>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
