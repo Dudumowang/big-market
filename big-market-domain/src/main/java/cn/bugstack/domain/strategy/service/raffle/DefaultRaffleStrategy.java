@@ -5,7 +5,6 @@ import cn.bugstack.domain.strategy.model.entity.RuleActionEntity;
 import cn.bugstack.domain.strategy.model.entity.RuleMatterEntity;
 import cn.bugstack.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 import cn.bugstack.domain.strategy.repository.IStrategyRepository;
-import cn.bugstack.domain.strategy.service.annotation.LogicStrategy;
 import cn.bugstack.domain.strategy.service.armory.IStrategyDispatch;
 import cn.bugstack.domain.strategy.service.rule.ILogicFilter;
 import cn.bugstack.domain.strategy.service.rule.factory.DefaultLogicFactory;
@@ -44,10 +43,9 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy {
 
 		//黑名单
 		String ruleBackList = Arrays.stream(logics)
-				.filter(str->str.contains(DefaultLogicFactory.LogicModel.RULE_BLACKLIST.getCode()))
+				.filter(str -> str.contains(DefaultLogicFactory.LogicModel.RULE_BLACKLIST.getCode()))
 				.findFirst()
 				.orElse(null);
-
 
 
 		if (StringUtils.isNotBlank(ruleBackList)) {
