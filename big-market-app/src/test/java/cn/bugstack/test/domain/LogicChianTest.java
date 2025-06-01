@@ -19,14 +19,14 @@ import javax.annotation.Resource;
 
 /**
  * @Author: 杨文彬
- * @Description: 抽奖策略测试
- * @CreateTime: 2025-04-01
+ * @Description:
+ * @CreateTime: 2025-06-02
  */
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class RaffleStrategyTest {
 
+public class LogicChianTest {
 	@Resource
 	private IStrategyArmory strategyArmory;
 	@Resource
@@ -36,7 +36,6 @@ public class RaffleStrategyTest {
 	@Resource
 	private RuleWeightLogicChain ruleWeightLogicChain;
 
-
 	@Before
 	public void setUp() {
 		// 策略装配 100001、100002、100003
@@ -44,12 +43,10 @@ public class RaffleStrategyTest {
 		log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100002L));
 		log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100003L));
 
-
 		// 通过反射 mock 规则中的值
 		ReflectionTestUtils.setField(ruleLockLogicFilter, "userRaffleCount", 10L);
 		// 通过反射 mock 规则中的值
 		ReflectionTestUtils.setField(ruleWeightLogicChain, "userScore", 4900L);
-
 	}
 
 	@Test
