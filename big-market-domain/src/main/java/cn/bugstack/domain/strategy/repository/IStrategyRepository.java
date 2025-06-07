@@ -3,7 +3,8 @@ package cn.bugstack.domain.strategy.repository;
 import cn.bugstack.domain.strategy.model.entity.StrategyAwardEntity;
 import cn.bugstack.domain.strategy.model.entity.StrategyEntity;
 import cn.bugstack.domain.strategy.model.entity.StrategyRuleEntity;
-import cn.bugstack.domain.strategy.model.vo.StrategyAwardRuleModelVO;
+import cn.bugstack.domain.strategy.model.valobj.RuleTreeVO;
+import cn.bugstack.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 
 import java.util.HashMap;
 import java.util.List;
@@ -34,5 +35,9 @@ public interface IStrategyRepository {
 
     String queryStrategyRuleValue(Long strategyId, Integer awardId, String ruleModel);
 
-	StrategyAwardRuleModelVO queryStrategyAwardRuleModel(Long strategyId, Integer awardId);
+	StrategyAwardRuleModelVO queryStrategyAwardRuleModelVO(Long strategyId, Integer awardId);
+
+	RuleTreeVO queryRuleTreeVOByTreeId(String treeId);
+
+
 }

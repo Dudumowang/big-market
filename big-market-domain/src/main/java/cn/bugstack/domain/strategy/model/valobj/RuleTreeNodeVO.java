@@ -1,4 +1,4 @@
-package cn.bugstack.domain.strategy.model.vo;
+package cn.bugstack.domain.strategy.model.valobj;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,7 +19,7 @@ import java.util.List;
 public class RuleTreeNodeVO {
 
 	/** 规则树ID */
-	private Integer treeId;
+	private String treeId;
 	/** 规则Key */
 	private String ruleKey;
 	/** 规则描述 */

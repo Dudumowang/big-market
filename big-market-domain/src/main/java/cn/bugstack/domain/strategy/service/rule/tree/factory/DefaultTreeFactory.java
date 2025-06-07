@@ -1,7 +1,7 @@
 package cn.bugstack.domain.strategy.service.rule.tree.factory;
 
-import cn.bugstack.domain.strategy.model.vo.RuleLogicCheckTypeVO;
-import cn.bugstack.domain.strategy.model.vo.RuleTreeVO;
+import cn.bugstack.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
+import cn.bugstack.domain.strategy.model.valobj.RuleTreeVO;
 import cn.bugstack.domain.strategy.service.rule.tree.ILogicTreeNode;
 import cn.bugstack.domain.strategy.service.rule.tree.factory.engine.IDecisionTreeEngine;
 import cn.bugstack.domain.strategy.service.rule.tree.factory.engine.impl.DecisionTreeEngine;
@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -41,7 +40,7 @@ public class DefaultTreeFactory {
 	@NoArgsConstructor
 	public static class TreeActionEntity {
 		private RuleLogicCheckTypeVO ruleLogicCheckType;
-		private StrategyAwardData strategyAwardData;
+		private StrategyAwardVO strategyAwardData;
 	}
 
 
@@ -49,7 +48,7 @@ public class DefaultTreeFactory {
 	@Builder
 	@AllArgsConstructor
 	@NoArgsConstructor
-	public static class StrategyAwardData{
+	public static class StrategyAwardVO {
 		private Integer awardId;
 		private String awardRuleValue;
 	}

@@ -1,6 +1,6 @@
 package cn.bugstack.domain.strategy.service.rule.tree.impl;
 
-import cn.bugstack.domain.strategy.model.vo.RuleLogicCheckTypeVO;
+import cn.bugstack.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
 import cn.bugstack.domain.strategy.service.rule.tree.ILogicTreeNode;
 import cn.bugstack.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +19,7 @@ public class RuleLuckAwardLogicTreeNode implements ILogicTreeNode {
 	public DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId) {
 		return DefaultTreeFactory.TreeActionEntity.builder()
 				.ruleLogicCheckType(RuleLogicCheckTypeVO.TAKE_OVER)
-				.strategyAwardData(DefaultTreeFactory.StrategyAwardData.builder()
+				.strategyAwardData(DefaultTreeFactory.StrategyAwardVO.builder()
 						.awardId(101)
 						.awardRuleValue("1,100")
 						.build())

@@ -15,11 +15,10 @@ import javax.annotation.Resource;
 import java.util.*;
 
 /**
- * @Author: 杨文彬
- * @Description: 装配测试
- * @CreateTime: 2025-03-23
+ * @author Fuzhengwei bugstack.cn @小傅哥
+ * @description 策略领域测试
+ * @create 2023-12-23 11:33
  */
-
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -36,7 +35,7 @@ public class StrategyTest {
      */
     @Before
     public void test_strategyArmory() {
-        boolean success = strategyArmory.assembleLotteryStrategy(100001L);
+        boolean success = strategyArmory.assembleLotteryStrategy(100005L);
         log.info("测试结果：{}", success);
     }
 
@@ -45,7 +44,7 @@ public class StrategyTest {
      */
     @Test
     public void test_getRandomAwardId() {
-        log.info("测试结果：{} - 奖品ID值", strategyDispatch.getRandomAwardId(100001L));
+         log.info("测试结果：{} - 奖品ID值", strategyDispatch.getRandomAwardId(100001L));
     }
 
     /**
@@ -107,4 +106,3 @@ public class StrategyTest {
     }
 
 }
-

@@ -2,11 +2,10 @@ package cn.bugstack.domain.strategy.service.rule.tree.factory.engine.impl;
 
 
 
-import cn.bugstack.domain.strategy.model.vo.RuleLogicCheckTypeVO;
-import cn.bugstack.domain.strategy.model.vo.RuleTreeNodeLineVO;
-import cn.bugstack.domain.strategy.model.vo.RuleTreeNodeVO;
-import cn.bugstack.domain.strategy.model.vo.RuleTreeVO;
-import cn.bugstack.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
+import cn.bugstack.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
+import cn.bugstack.domain.strategy.model.valobj.RuleTreeNodeLineVO;
+import cn.bugstack.domain.strategy.model.valobj.RuleTreeNodeVO;
+import cn.bugstack.domain.strategy.model.valobj.RuleTreeVO;
 import cn.bugstack.domain.strategy.service.rule.tree.ILogicTreeNode;
 import cn.bugstack.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import cn.bugstack.domain.strategy.service.rule.tree.factory.engine.IDecisionTreeEngine;
@@ -34,9 +33,9 @@ public class DecisionTreeEngine implements IDecisionTreeEngine {
 	}
 
 	@Override
-	public DefaultTreeFactory.StrategyAwardData process(String userId, Long strategyId, Integer awardId) {
+	public DefaultTreeFactory.StrategyAwardVO process(String userId, Long strategyId, Integer awardId) {
 
-		DefaultTreeFactory.StrategyAwardData strategyAwardData = null;
+		DefaultTreeFactory.StrategyAwardVO strategyAwardData = null;
 
 		// 获取基础信息
 		String nextNode = ruleTreeVO.getTreeRootRuleNode();
