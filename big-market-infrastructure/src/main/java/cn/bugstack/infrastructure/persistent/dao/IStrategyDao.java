@@ -1,6 +1,7 @@
 package cn.bugstack.infrastructure.persistent.dao;
 
 import cn.bugstack.infrastructure.persistent.po.Strategy;
+import cn.bugstack.infrastructure.persistent.po.StrategyAward;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -12,4 +13,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface IStrategyDao {
 
     Strategy queryStrategyByStrategyId(Long strategyId);
+
 }

@@ -1,5 +1,6 @@
 package cn.bugstack.infrastructure.persistent.redis;
 
+import cn.bugstack.types.common.Constants;
 import org.redisson.api.*;
 import org.springframework.stereotype.Service;
 
@@ -155,6 +156,23 @@ public class RedissonService implements IRedisService {
     public <T> RBloomFilter<T> getBloomFilter(String key) {
         return redissonClient.getBloomFilter(key);
     }
+
+    @Override
+    public Long getAtomicLong(String key) {
+        return redissonClient.getAtomicLong(key).get();
+    }
+
+    @Override
+    public void setAtomicLong(String cacheKey, Integer value) {
+        redissonClient.getAtomicLong(cacheKey).set(value);
+
+    }
+
+    @Override
+    public Boolean setNx(String key) {
+        return redissonClient.getBucket(key).trySet("lock");
+    }
+
 
 
 }

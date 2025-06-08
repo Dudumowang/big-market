@@ -30,7 +30,7 @@ public class DefaultTreeFactory {
 	}
 
 	public IDecisionTreeEngine openLogicTree(RuleTreeVO ruleTreeVO){
-		return new DecisionTreeEngine(logicTreeNodeGroup, ruleTreeVO);
+       		return new DecisionTreeEngine(logicTreeNodeGroup, ruleTreeVO);
 	}
 
 
@@ -40,7 +40,7 @@ public class DefaultTreeFactory {
 	@NoArgsConstructor
 	public static class TreeActionEntity {
 		private RuleLogicCheckTypeVO ruleLogicCheckType;
-		private StrategyAwardVO strategyAwardData;
+		private StrategyAwardVO strategyAwardVO;
 	}
 
 
